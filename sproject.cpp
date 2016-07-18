@@ -434,7 +434,7 @@ int check_regex(string text) {
 	    }
 	    
 	    if(check_cpp(text)==1) {
-	     cout << "\n\tC++ or C\n\n";
+	     cout << "\n\tC++\n\n";
 		 return 1;	
 	    }
 	    if(check_java(text)==1) {
