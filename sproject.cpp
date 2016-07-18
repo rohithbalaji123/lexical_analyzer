@@ -27,8 +27,8 @@ int c=0,cpp=0,java=0,python=0;
 
 // Regexes for checking the occurences of common and popular statements in a language - just the tip of the iceberg 
 
-char r_cpp[][200] = { "\\s*(std::)?(cout|cin|cerr)\\s*(<<|>>)[^;]*([\)]|;)\\s*" , "\\s*typedef [[:print:]]* [[:print:]]*;\\s*", 
-  "\\s*(public|private|protected)\\s*:\\s*", "\\s*#include\\s*(<|\")\\w*(.h)?(>|\")\\s*" , "\\s*#define\\s+[[:print:]]*" , 
+char r_cpp[][200] = {"\\s*(public|private|protected)\\s*:\\s*", "\\s*(std::)?(cout|cin|cerr)\\s*(<<|>>)[^;]*([\)]|;)\\s*" , "\\s*typedef [[:print:]]* [[:print:]]*;\\s*", 
+   "\\s*#include\\s*(<|\")\\w*(.h)?(>|\")\\s*" , "\\s*#define\\s+[[:print:]]*" , 
   "\\s*(int|void)?\\s*main\\s*[\(][[:print:]]*[\)][[:print:]]*" , "[[:print:]]*for\\s*[\(][[:print:]]*;[[:print:]]*;[[:print:]]*[\)][[:print:]]*" ,
  
  };
@@ -58,7 +58,7 @@ int check_cpp(string text) {
 	regex a;
 	int i=0;
 	
-	for(i=0;i<6;i++) {
+	for(i=0;i<2;i++) {
 		a.assign(r_cpp[i]);
 		if(regex_match(text,a)) {
 			return 1;
